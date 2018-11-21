@@ -189,7 +189,7 @@ namespace powerfunctions {
      * The motor's power is switched off and thus the motor will roll to a stop.
      */
     //% blockId=pf_float
-    //% block="ffff3 | motor %motor | to stop"
+    //% block="ffff4 | motor %motor | to stop"
     //% weight=70
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function float(motor: PowerFunctionsMotor) {
@@ -262,10 +262,10 @@ namespace powerfunctions {
 
     namespace transport {
 
-        const IR_MARK = 11.84 * 1000000 / 38000
-        const START_STOP_PAUSE = 11.84 * 1000000 / 38000
-        const LOW_PAUSE = 7.11 * 1000000 / 38000
-        const HIGH_PAUSE = 4.21 * 1000000 / 38000
+        const IR_MARK = 6 * 1000000 / 38000
+        const START_STOP_PAUSE = 39 * 1000000 / 38000
+        const LOW_PAUSE = 10 * 1000000 / 38000
+        const HIGH_PAUSE = 21 * 1000000 / 38000
 
         export class InfraredDevice {
             private pin: AnalogPin
