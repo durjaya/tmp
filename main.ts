@@ -264,8 +264,8 @@ namespace powerfunctions {
 
         const IR_MARK = 6 * 1000000 / 38000
         const START_STOP_PAUSE = 39 * 1000000 / 38000
-        const LOW_PAUSE = 10 * 1000000 / 38000 /2
-        const HIGH_PAUSE = 21 * 1000000 / 38000 /2
+        const LOW_PAUSE = 10 * 1000000 / 38000 /20
+        const HIGH_PAUSE = 21 * 1000000 / 38000 /20
 
         export class InfraredDevice {
             private pin: AnalogPin
