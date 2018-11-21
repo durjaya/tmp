@@ -235,7 +235,7 @@ namespace powerfunctions {
 
         function createMessageFromNibbles(nibble1: number, nibble2: number, nibble3: number) {
             const lrc = 0xF ^ nibble1 ^ nibble2 ^ nibble3
-            return 0b1010101010101010
+            return 0b0000011001001101
         }
 
         export function createSingleOutputPwmMessage(channel: PowerFunctionsChannel, output: PowerFunctionsOutput, value: number) {
