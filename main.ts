@@ -5,8 +5,8 @@
 /* Board specific configuration */
 namespace BoardConfig {
     export const DefaultPin = AnalogPin.P1;
-    export const MarkTimingCorrectionMicroSeconds = -65;
-    export const PauseTimingCorrectionMicroSeconds = -150;
+    export const MarkTimingCorrectionMicroSeconds = 0;
+    export const PauseTimingCorrectionMicroSeconds = 0;
 }
 
 enum PowerFunctionsChannel {
@@ -264,8 +264,8 @@ namespace powerfunctions {
 
         const IR_MARK = 6 * 1000000 / 38000
         const START_STOP_PAUSE = 39 * 1000000 / 38000
-        const LOW_PAUSE = 10 * 1000000 / 38000
-        const HIGH_PAUSE = 21 * 1000000 / 38000
+        const LOW_PAUSE = 10 * 1000000 / 38000 /2
+        const HIGH_PAUSE = 21 * 1000000 / 38000 /2
 
         export class InfraredDevice {
             private pin: AnalogPin
