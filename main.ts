@@ -1,9 +1,6 @@
 /**
  * Power Functions IR Sender
- * Control your Power Functions motors using your micro:bit or Calliope-Mini, an infrared LED and MakeCode.
- *
- * (c) 2017-2018, Philipp Henkel
- */
+ * Control your Power Functions motors using your micro:bit or Calliope-Mini, an infrared LED and 
 
 /* Board specific configuration */
 namespace BoardConfig {
@@ -209,7 +206,8 @@ namespace powerfunctions {
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function setSpeed(motor: PowerFunctionsMotor, speed: number) {
         speed = Math.max(-7, Math.min(7, speed))
-        sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
+        //TODO change code
+        //sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
     }
 
     namespace message {
@@ -237,7 +235,7 @@ namespace powerfunctions {
 
         function createMessageFromNibbles(nibble1: number, nibble2: number, nibble3: number) {
             const lrc = 0xF ^ nibble1 ^ nibble2 ^ nibble3
-            return (nibble1 << 12) | (nibble2 << 8) | (nibble3 << 4) | lrc
+            return 0b1010101010101010
         }
 
         export function createSingleOutputPwmMessage(channel: PowerFunctionsChannel, output: PowerFunctionsOutput, value: number) {
