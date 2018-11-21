@@ -280,7 +280,7 @@ namespace powerfunctions {
             }
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
-                pins.analogWritePin(this.pin, 511)
+                pins.analogWritePin(this.pin, 210)
                 control.waitMicros(Math.max(1, markMicroSeconds + markTimingCorrectionMicroSeconds))
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(Math.max(1, pauseMicroSeconds + pauseTimingCorrectionMicroSeconds))
