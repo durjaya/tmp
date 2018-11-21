@@ -189,7 +189,7 @@ namespace powerfunctions {
      * The motor's power is switched off and thus the motor will roll to a stop.
      */
     //% blockId=pf_float
-    //% block="fffff | motor %motor | to stop"
+    //% block="ffff1 | motor %motor | to stop"
     //% weight=70
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function float(motor: PowerFunctionsMotor) {
@@ -207,7 +207,7 @@ namespace powerfunctions {
     export function setSpeed(motor: PowerFunctionsMotor, speed: number) {
         speed = Math.max(-7, Math.min(7, speed))
         //TODO change code
-        //sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
+        sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
     }
 
     namespace message {
