@@ -189,7 +189,7 @@ namespace powerfunctions {
      * The motor's power is switched off and thus the motor will roll to a stop.
      */
     //% blockId=pf_float
-    //% block="ffff1 | motor %motor | to stop"
+    //% block="ffff2 | motor %motor | to stop"
     //% weight=70
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function float(motor: PowerFunctionsMotor) {
