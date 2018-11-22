@@ -289,22 +289,22 @@ namespace powerfunctions {
                 control.waitMicros(6067)
                 //2
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //3
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1500)
                 //4
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //5
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1500)
                 //6
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //7
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //8
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(1500)
@@ -313,10 +313,10 @@ namespace powerfunctions {
                 control.waitMicros(1500)
                 //10
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //11
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //12
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(1500)
@@ -325,16 +325,16 @@ namespace powerfunctions {
                 control.waitMicros(1500)
                 //14
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //15
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //16
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(1500)
                 //17
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //18
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(10146)
