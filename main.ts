@@ -285,7 +285,28 @@ namespace powerfunctions {
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1000)
                 pins.analogWritePin(this.pin, 0)
+                control.waitMicros(900)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(800)
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(700)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(600)
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(500)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(400)
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(300)
+
+                pins.analogWritePin(this.pin, 511)
                 control.waitMicros(200)
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(100)
+
             }
         }
 
