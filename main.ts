@@ -277,8 +277,7 @@ namespace powerfunctions {
                 pwmPeriod = 26
             ) {
                 this.pin = pin
-                pins.analogWritePin(this.pin, 0)
-                pins.analogSetPeriod(this.pin, pwmPeriod)
+
             }
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
