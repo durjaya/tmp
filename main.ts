@@ -281,7 +281,7 @@ namespace powerfunctions {
             }
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
-                control.waitMicros(10000)
+                control.waitMicros(1000)
 
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(6067)
@@ -331,7 +331,7 @@ namespace powerfunctions {
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(10146)
 
-                control.waitMicros(10000)
+                control.waitMicros(1000)
 
             }
         }
