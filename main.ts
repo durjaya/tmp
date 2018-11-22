@@ -118,7 +118,7 @@ namespace powerfunctions {
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.tooltips="false"
     //% advanced=true
     export function useIrLedPin(pin: AnalogPin) {
-        irLed = pin
+        device.transmitBit(1, 1)
     }
 
     /**
@@ -282,29 +282,52 @@ namespace powerfunctions {
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1000)
+                control.waitMicros(6067)
+
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(900)
+                control.waitMicros(600)
 
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(800)
+                control.waitMicros(1500)
+
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(700)
+                control.waitMicros(600)
 
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(600)
+
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(500)
+                control.waitMicros(1500)
 
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(400)
+                control.waitMicros(1500)
+
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(300)
+                control.waitMicros(600)
 
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(200)
+                control.waitMicros(600)
+
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(100)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(10146)
 
             }
         }
