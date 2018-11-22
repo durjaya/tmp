@@ -1,12 +1,15 @@
 /**
  * Power Functions IR Sender
- * Control your Power Functions motors using your micro:bit or Calliope-Mini, an infrared LED and 
+ * Control your Power Functions motors using your micro:bit or Calliope-Mini, an infrared LED and MakeCode.
+ *
+ * (c) 2017-2018, Philipp Henkel
+ */
 
 /* Board specific configuration */
 namespace BoardConfig {
     export const DefaultPin = AnalogPin.P1;
-    export const MarkTimingCorrectionMicroSeconds = 0;
-    export const PauseTimingCorrectionMicroSeconds = 0;
+    export const MarkTimingCorrectionMicroSeconds = -65;
+    export const PauseTimingCorrectionMicroSeconds = -150;
 }
 
 enum PowerFunctionsChannel {
@@ -189,7 +192,7 @@ namespace powerfunctions {
      * The motor's power is switched off and thus the motor will roll to a stop.
      */
     //% blockId=pf_float
-    //% block="ffff6 | motor %motor | to stop"
+    //% block="float | motor %motor | to stop"
     //% weight=70
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function float(motor: PowerFunctionsMotor) {
@@ -206,7 +209,6 @@ namespace powerfunctions {
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function setSpeed(motor: PowerFunctionsMotor, speed: number) {
         speed = Math.max(-7, Math.min(7, speed))
-        //TODO change code
         sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
     }
 
@@ -235,7 +237,7 @@ namespace powerfunctions {
 
         function createMessageFromNibbles(nibble1: number, nibble2: number, nibble3: number) {
             const lrc = 0xF ^ nibble1 ^ nibble2 ^ nibble3
-            return 0b1100000000000011
+            return (nibble1 << 12) | (nibble2 << 8) | (nibble3 << 4) | lrc
         }
 
         export function createSingleOutputPwmMessage(channel: PowerFunctionsChannel, output: PowerFunctionsOutput, value: number) {
@@ -264,8 +266,8 @@ namespace powerfunctions {
 
         const IR_MARK = 6 * 1000000 / 38000
         const START_STOP_PAUSE = 39 * 1000000 / 38000
-        const LOW_PAUSE = 10 * 1000000 / 38000 /20
-        const HIGH_PAUSE = 21 * 1000000 / 38000 /20
+        const LOW_PAUSE = 10 * 1000000 / 38000
+        const HIGH_PAUSE = 21 * 1000000 / 38000
 
         export class InfraredDevice {
             private pin: AnalogPin
