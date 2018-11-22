@@ -283,9 +283,52 @@ namespace powerfunctions {
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(Math.max(1, markMicroSeconds + markTimingCorrectionMicroSeconds))
+                control.waitMicros(6067)
+
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(Math.max(1, pauseMicroSeconds + pauseTimingCorrectionMicroSeconds))
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(1500)
+
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(600)
+
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(10146)
             }
         }
 
