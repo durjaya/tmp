@@ -118,7 +118,7 @@ namespace powerfunctions {
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.tooltips="false"
     //% advanced=true
     export function useIrLedPin(pin: AnalogPin) {
-        transport.setSpeed(motor, 3)
+        irLed = pin
     }
 
     /**
@@ -281,6 +281,8 @@ namespace powerfunctions {
             }
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
+                control.waitMicros(10000)
+
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(6067)
 
@@ -328,6 +330,8 @@ namespace powerfunctions {
 
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(10146)
+
+                control.waitMicros(10000)
 
             }
         }
