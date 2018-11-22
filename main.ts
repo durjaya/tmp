@@ -189,7 +189,7 @@ namespace powerfunctions {
      * The motor's power is switched off and thus the motor will roll to a stop.
      */
     //% blockId=pf_float
-    //% block="ffff5 | motor %motor | to stop"
+    //% block="ffff6 | motor %motor | to stop"
     //% weight=70
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function float(motor: PowerFunctionsMotor) {
@@ -235,7 +235,7 @@ namespace powerfunctions {
 
         function createMessageFromNibbles(nibble1: number, nibble2: number, nibble3: number) {
             const lrc = 0xF ^ nibble1 ^ nibble2 ^ nibble3
-            return 0b0000011001001101
+            return 0b1100000000000011
         }
 
         export function createSingleOutputPwmMessage(channel: PowerFunctionsChannel, output: PowerFunctionsOutput, value: number) {
