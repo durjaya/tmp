@@ -118,7 +118,7 @@ namespace powerfunctions {
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.tooltips="false"
     //% advanced=true
     export function useIrLedPin(pin: AnalogPin) {
-        device.transmitBit(1, 1)
+        transport.setSpeed(motor, 3)
     }
 
     /**
