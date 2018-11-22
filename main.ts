@@ -353,30 +353,7 @@ namespace powerfunctions {
         }
 
         export function sendMessage(message: number, device: InfraredDevice): void {
-            const MAX_LENGTH_MS = 16
-            const channel = 1 + ((message >> 12) & 0b0011)
-
-            for (let sendCount = 0; sendCount < 5; sendCount++) {
-                const MESSAGE_BITS = 16
-
-                sendStart(device)
-
-                for (let mask = 1 << (MESSAGE_BITS - 1); mask > 0; mask >>= 1) {
-                    if (message & mask) {
-                        sendHigh(device)
-                    } else {
-                        sendLow(device)
-                    }
-                }
-
-                sendStop(device)
-
-                if (sendCount == 0 || sendCount == 1) {
-                    basic.pause(5 * MAX_LENGTH_MS)
-                } else {
-                    basic.pause((6 + 2 * channel) * MAX_LENGTH_MS)
-                }
-            }
+            sendStart(device)
         }
     }
 
