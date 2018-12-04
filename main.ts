@@ -187,23 +187,12 @@ namespace powerfunctions {
         setSpeed(motor, 0)
     }
 
-    /**
-     * Float a motor to stop.
-     * The motor's power is switched off and thus the motor will roll to a stop.
-     */
-    //% blockId=pf_float
-    //% block="float | motor %motor | to stop"
-    //% weight=70
-    //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
-    export function float(motor: PowerFunctionsMotor) {
-        sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), 8)
-    }
 
     /**
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
-    //% block="set | motor %motor | to %speed"
+    //% block="11set | motor %motor | to %speed"
     //% speed.min=-7 speed.max=7
     //% weight=60
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
@@ -286,40 +275,40 @@ namespace powerfunctions {
 
                 //1
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(5850)
+                control.waitMicros(6000)
                 //2
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(600)
                 //3
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1500)
+                control.waitMicros(600)
                 //4
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(1500)
                 //5
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1500)
                 //6
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(650)
+                control.waitMicros(600)
                 //7
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(550)
+                control.waitMicros(1500)
                 //8
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(1600)
+                control.waitMicros(600)
                 //9
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1450)
+                control.waitMicros(1500)
                 //10
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(650)
+                control.waitMicros(600)
                 //11
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(550)
+                control.waitMicros(600)
                 //12
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(1600)
+                control.waitMicros(1500)
                 //13
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1500)
@@ -328,23 +317,18 @@ namespace powerfunctions {
                 control.waitMicros(600)
                 //15
                 pins.analogWritePin(this.pin, 511)
-                control.waitMicros(600)
+                control.waitMicros(1500)
                 //16
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(1550)
-                //17
-                pins.analogWritePin(this.pin, 0)
                 control.waitMicros(600)
-                //18
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(10146)
-
-                control.waitMicros(10146)
+                //17
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(1500)
             }
         }
 
         function sendStart(device: InfraredDevice): void {
-            device.transmitBit(IR_MARK, START_STOP_PAUSE)
+            device.transmitBit(IR_MARK, LOW_PAUSE)
         }
 
         function sendStop(device: InfraredDevice): void {
