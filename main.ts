@@ -275,21 +275,30 @@ namespace powerfunctions {
 
                 //1
                 pins.analogWritePin(this.pin, 511)
+<<<<<<< HEAD
                 control.waitMicros(6000)
+=======
+                control.waitMicros(6067)
+>>>>>>> parent of 2e96b21... Update main.ts
                 //2
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //3
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(600)
                 //4
                 pins.analogWritePin(this.pin, 0)
+<<<<<<< HEAD
                 control.waitMicros(1500)
+=======
+                control.waitMicros(500)
+>>>>>>> parent of 2e96b21... Update main.ts
                 //5
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1500)
                 //6
                 pins.analogWritePin(this.pin, 0)
+<<<<<<< HEAD
                 control.waitMicros(600)
                 //7
                 pins.analogWritePin(this.pin, 511)
@@ -297,15 +306,31 @@ namespace powerfunctions {
                 //8
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(600)
+=======
+                control.waitMicros(500)
+                //7
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(500)
+                //8
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(1500)
+>>>>>>> parent of 2e96b21... Update main.ts
                 //9
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1500)
                 //10
                 pins.analogWritePin(this.pin, 0)
+<<<<<<< HEAD
                 control.waitMicros(600)
                 //11
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(600)
+=======
+                control.waitMicros(500)
+                //11
+                pins.analogWritePin(this.pin, 511)
+                control.waitMicros(500)
+>>>>>>> parent of 2e96b21... Update main.ts
                 //12
                 pins.analogWritePin(this.pin, 0)
                 control.waitMicros(1500)
@@ -314,9 +339,10 @@ namespace powerfunctions {
                 control.waitMicros(1500)
                 //14
                 pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                control.waitMicros(500)
                 //15
                 pins.analogWritePin(this.pin, 511)
+<<<<<<< HEAD
                 control.waitMicros(1500)
                 //16
                 pins.analogWritePin(this.pin, 0)
@@ -324,6 +350,20 @@ namespace powerfunctions {
                 //17
                 pins.analogWritePin(this.pin, 511)
                 control.waitMicros(1500)
+=======
+                control.waitMicros(500)
+                //16
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(1500)
+                //17
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(500)
+                //18
+                pins.analogWritePin(this.pin, 0)
+                control.waitMicros(10146)
+
+                control.waitMicros(10146)
+>>>>>>> parent of 2e96b21... Update main.ts
             }
         }
 
