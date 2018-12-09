@@ -366,20 +366,23 @@ namespace powerfunctions {
     export function runTests() {
 
         {
-            control.assert(
-                true,
-                "createComboDirectMessage Red1 forward, Blue1 backward full speed")
+            let a = 1
         }
+
         {
+            const c1ComboRedForwardBlueBackward = message.createComboDirectMessage(PowerFunctionsChannel.One, PowerFunctionsCommand.Forward, PowerFunctionsCommand.Backward)
+            const expectedC1ComboRedForwardBlueBackward = 0b0000000110010111 // 407
             control.assert(
-                true,
+                c1ComboRedForwardBlueBackward === expectedC1ComboRedForwardBlueBackward,
                 "createComboDirectMessage Red1 forward, Blue1 backward full speed")
         }
+
         {
+            const c1ComboRedFloatBlueBrake = message.createComboPwmMessage(PowerFunctionsChannel.One, 8, 0)
+            const expectedC1ComboRedFloatBlueBrake = 0b0100100000000011 // 18435
             control.assert(
-                true,
-                "createComboDirectMessage Red1 forward, Blue1 backward full speed")
+                c1ComboRedFloatBlueBrake === expectedC1ComboRedFloatBlueBrake,
+                "createComboPwmMessage Red1 float, Blue1 brake")
         }
-        
     }
 }
