@@ -363,12 +363,5 @@ namespace powerfunctions {
     }
 
 
-    export function runTests() {
 
-        {
-            let a = 1
-        }
-
-        
-    }
 }
