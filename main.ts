@@ -366,13 +366,10 @@ namespace powerfunctions {
     export function runTests() {
 
         {
-           let a = 1
+            control.assert(
+                true,
+                "createComboDirectMessage Red1 forward, Blue1 backward full speed")
         }
-        {
-            let a = 1
-         }
-         {
-            let a = 1
-         }
+        
     }
 }
