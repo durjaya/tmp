@@ -362,31 +362,4 @@ namespace powerfunctions {
         }
     }
 
-
-    export function runTests() {
-
-        {
-            const c1RedFullForward = message.createSingleOutputPwmMessage(PowerFunctionsChannel.One, PowerFunctionsOutput.Red, 7)
-            const expectedC1RedFullForward = 0b0000010001111100 // 1148
-            control.assert(
-                c1RedFullForward === expectedC1RedFullForward,
-                "createSingleOutputPwmMessage motor Red1 with speed 7")
-        }
-
-        {
-            const c1ComboRedForwardBlueBackward = message.createComboDirectMessage(PowerFunctionsChannel.One, PowerFunctionsCommand.Forward, PowerFunctionsCommand.Backward)
-            const expectedC1ComboRedForwardBlueBackward = 0b0000000110010111 // 407
-            control.assert(
-                c1ComboRedForwardBlueBackward === expectedC1ComboRedForwardBlueBackward,
-                "createComboDirectMessage Red1 forward, Blue1 backward full speed")
-        }
-
-        {
-            const c1ComboRedFloatBlueBrake = message.createComboPwmMessage(PowerFunctionsChannel.One, 8, 0)
-            const expectedC1ComboRedFloatBlueBrake = 0b0100100000000011 // 18435
-            control.assert(
-                c1ComboRedFloatBlueBrake === expectedC1ComboRedFloatBlueBrake,
-                "createComboPwmMessage Red1 float, Blue1 brake")
-        }
-    }
 }
