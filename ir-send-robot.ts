@@ -18,7 +18,6 @@
 
 // timing constants
 const LEADER_PULSE = 6000;
-const PULSE_BIT = 960;
 const PULSE_ONE = 1600;
 const PULSE_ZERO = 530;
 
@@ -42,25 +41,23 @@ function ledOff(d: number) {
 
 //send 8 bit
 function send(code: number) {
-    for (let i = 7; i > -1; i--) {
+    for (let i = 15; i > -1; i--) {
         if (1 << i & code) {
-            ledOn(PULSE_BIT);
-            ledOff(PULSE_ONE);
+            ledOn(PULSE_ONE);
         } else {
-            ledOn(PULSE_BIT);
             ledOff(PULSE_ZERO);
         }
     }
 }
 
 // send 32 bit with appropriate start and end
-function command(ir1: number, ir2: number, ir3: number, ir4: number) {
+function command(ir1: number, ir2: number) {
     let factorx = 1
     //1
     ledOn(6000 * factorx);
 
     //2
-    ledOff(550 * factorx);
+    ledOff(600 * factorx);
 
     //3
     ledOn(600 * factorx);
@@ -107,44 +104,13 @@ function command(ir1: number, ir2: number, ir3: number, ir4: number) {
     //17
     ledOn(1500 * factorx);
 
-    //18 finish
-    ledOff(15000 * factorx);
 }
-
-
-
-
 
 // Button A sends code
 input.onButtonPressed(Button.A, () => {
-    if (code == 0) {
-        command(0x35, 0x35, 64, 191);
-    } else if (code == 1) {
-        command(0xE0, 0xE0, 0xD0, 0x2F);
-    } else if (code == 2) {
-        command(0xE0, 0xE0, 0xE0, 0x1F);
-    }
-})
+    command(0x35, 0x35);
+    //send(0x35)
 
-// Button B changes code
-input.onButtonPressed(Button.B, () => {
-    code = (code + 1) % 3;
-})
 
-// Button A+B changes between demo and real mode
-// Demo is 200 times slower
-input.onButtonPressed(Button.AB, () => {
-    if (FACTOR == 1) {
-        FACTOR = 200;
-    } else {
-        FACTOR = 1;
-    }
-    basic.showLeds(`
-        # . . . #
-        . # . # .
-        . . # . .
-        . # . # .
-        # . . . #
-        `);
+    
 })
-
