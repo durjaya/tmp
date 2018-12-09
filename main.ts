@@ -271,100 +271,74 @@ namespace powerfunctions {
             }
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
-                control.waitMicros(10146)
-
+                let factorx = 1
                 //1
-                pins.analogWritePin(this.pin, 511)
-<<<<<<< HEAD
-                control.waitMicros(6000)
-=======
-                control.waitMicros(6067)
->>>>>>> parent of 2e96b21... Update main.ts
+                ledOn(6000 * factorx);
+            
                 //2
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(500)
+                ledOff(600 * factorx);
+            
                 //3
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(600)
+                ledOn(600 * factorx);
+            
                 //4
-                pins.analogWritePin(this.pin, 0)
-<<<<<<< HEAD
-                control.waitMicros(1500)
-=======
-                control.waitMicros(500)
->>>>>>> parent of 2e96b21... Update main.ts
+                ledOff(1500 * factorx);
+            
                 //5
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1500)
+                ledOn(1500 * factorx);
+            
                 //6
-                pins.analogWritePin(this.pin, 0)
-<<<<<<< HEAD
-                control.waitMicros(600)
+                ledOff(600 * factorx);
+            
                 //7
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1500)
+                ledOn(1500 * factorx);
+            
                 //8
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
-=======
-                control.waitMicros(500)
-                //7
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(500)
-                //8
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(1500)
->>>>>>> parent of 2e96b21... Update main.ts
+                ledOff(600 * factorx);
+            
                 //9
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1500)
+                ledOn(1500 * factorx);
+            
                 //10
-                pins.analogWritePin(this.pin, 0)
-<<<<<<< HEAD
-                control.waitMicros(600)
+                ledOff(600 * factorx);
+            
                 //11
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(600)
-=======
-                control.waitMicros(500)
-                //11
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(500)
->>>>>>> parent of 2e96b21... Update main.ts
+                ledOn(600 * factorx);
+            
                 //12
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(1500)
+                ledOff(1500 * factorx);
+            
                 //13
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1500)
+                ledOn(1500 * factorx);
+            
                 //14
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(500)
+                ledOff(600 * factorx);
+            
                 //15
-                pins.analogWritePin(this.pin, 511)
-<<<<<<< HEAD
-                control.waitMicros(1500)
+                ledOn(1500 * factorx);
+            
                 //16
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(600)
+                ledOff(600 * factorx);
+            
                 //17
-                pins.analogWritePin(this.pin, 511)
-                control.waitMicros(1500)
-=======
-                control.waitMicros(500)
-                //16
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(1500)
-                //17
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(500)
-                //18
-                pins.analogWritePin(this.pin, 0)
-                control.waitMicros(10146)
-
-                control.waitMicros(10146)
->>>>>>> parent of 2e96b21... Update main.ts
+                ledOn(1500 * factorx);
             }
+        }
+
+        let FACTOR = 1
+
+        function ledOn(d: number) {
+            let r = d * FACTOR;
+            while (r > 26) {
+                pins.digitalWritePin(DigitalPin.P1, 1)
+                control.waitMicros(2);
+                pins.digitalWritePin(DigitalPin.P1, 0)
+                r = r - 26;
+            }
+        }
+
+        function ledOff(d: number) {
+            control.waitMicros(d * FACTOR);
         }
 
         function sendStart(device: InfraredDevice): void {
