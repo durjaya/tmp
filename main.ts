@@ -370,6 +370,16 @@ namespace powerfunctions {
                 true,
                 "createComboDirectMessage Red1 forward, Blue1 backward full speed")
         }
+        {
+            control.assert(
+                true,
+                "createComboDirectMessage Red1 forward, Blue1 backward full speed")
+        }
+        {
+            control.assert(
+                true,
+                "createComboDirectMessage Red1 forward, Blue1 backward full speed")
+        }
         
     }
 }
