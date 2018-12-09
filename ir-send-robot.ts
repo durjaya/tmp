@@ -14,6 +14,35 @@
  * ONE SIGNAL: 560 μs on, 1600 μs off
  * ZERO SIGNAL: 560 μs on, 530 μs off
  * END SIGNAL: 560 μs on, 4500 μs off
+ * 
+ * 
+ * 
+ 跳舞
+
+ 音量+
+ 音量-
+ 
+ 步行前进
+ 步行后退
+
+滑行前进
+滑行后退
+左转
+右转
+停止
+
+向左看
+向右看
+
+数学
+科普
+英语
+
+声控互动
+能量转换
+编程
+歌曲
+
  */
 
 // timing constants
