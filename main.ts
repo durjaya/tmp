@@ -1,12 +1,25 @@
 /**
  * Power Functions IR Sender
  * Control your Power Functions motors using your micro:bit or Calliope-Mini, an infrared LED and MakeCode.
- *
+ *  https://github.com/durjaya/LegoControl
  * (c) 2017-2018, Philipp Henkel
  */
 
 /* Board specific configuration */
 //% weight=99 color=#0fbc11 icon="\uf0e4" block="Power Functions"
+function ledOn(d: number) {
+    let r = d * FACTOR;
+    while (r > 26) {
+        
+        r = r - 26;
+    }
+}
+
+
+function ledOff(d: number) {
+    value =d 
+}
+
 namespace powerfunctions {
 
 
@@ -14,27 +27,13 @@ namespace powerfunctions {
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
-    //% block="33set "  
+    //% block="1set "  
     //% weight=60
     export function setSpeed() {
         let x = 1
     }
 
-    function ledOn(d: number) {
-        let r = d * FACTOR;
-        while (r > 26) {
-            pins.digitalWritePin(DigitalPin.P1, 1)
-            control.waitMicros(2);
-            pins.digitalWritePin(DigitalPin.P1, 0)
-            r = r - 26;
-        }
-    }
-    
 
-    function ledOff(d: number) {
-        value =d 
-        control.waitMicros(d * FACTOR);
-    }
 
     
     namespace transport {
