@@ -1,11 +1,3 @@
-/**
- * Power Functions IR Sender
- * Control your Power Functions motors using your micro:bit or Calliope-Mini, an infrared LED and MakeCode.
- *
- * (c) 2017-2018, Philipp Henkel
- */
-
-/* Board specific configuration */
 
 //% weight=99 color=#0fbc11 icon="\uf0e4" block="Power Functions"
 namespace powerfunctions {
@@ -33,44 +25,44 @@ namespace powerfunctions {
           control.waitMicros(d * FACTOR);
     }
 
-       // Stop
-       function stop() {
-    
-        //1
-        ledOn(6000);
-        //2
-        ledOff(600);
-        //3
-        ledOn(600);
-        //4
-        ledOff(1500);
-        //5
-        ledOn(1500);
-        //6
-        ledOff(600);
-        //7
-        ledOn(1500);
-        //8
-        ledOff(600);
-        //9
-        ledOn(1500);
-        //10
-        ledOff(600);
-        //11
-        ledOn(600);
-        //12
-        ledOff(1500);
-        //13
-        ledOn(1500);
-        //14
-        ledOff(600);
-        //15
-        ledOn(1500);
-        //16
-        ledOff(600);
-        //17
-        ledOn(1500);
-    }
+    // Stop
+    function stop() {
+
+    //1
+    ledOn(6000);
+    //2
+    ledOff(600);
+    //3
+    ledOn(600);
+    //4
+    ledOff(1500);
+    //5
+    ledOn(1500);
+    //6
+    ledOff(600);
+    //7
+    ledOn(1500);
+    //8
+    ledOff(600);
+    //9
+    ledOn(1500);
+    //10
+    ledOff(600);
+    //11
+    ledOn(600);
+    //12
+    ledOff(1500);
+    //13
+    ledOn(1500);
+    //14
+    ledOff(600);
+    //15
+    ledOn(1500);
+    //16
+    ledOff(600);
+    //17
+    ledOn(1500);
+}
 
 
     /**
