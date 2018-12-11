@@ -122,9 +122,9 @@ namespace powerfunctions {
     
     
     
-    
+    let FACTOR = 1
     function ledOff(d: number) {
-          control.waitMicros(d );
+          control.waitMicros(d * FACTOR);
     }
 
 
