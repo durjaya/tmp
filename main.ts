@@ -70,6 +70,7 @@ enum PowerFunctionsCommand {
 //% weight=99 color=#0fbc11 icon="\uf0e4" block="Power Functions"
 namespace powerfunctions {
 
+    
 
     let motorDirections = [
         PowerFunctionsDirection.Forward,
@@ -110,8 +111,10 @@ namespace powerfunctions {
         })
     }
 
+    let FACTOR = 1
+
     function ledOn(d: number) {
-        let r = d ;
+        let r = d * FACTOR;
         while (r > 26) {
             pins.digitalWritePin(DigitalPin.P1, 1)
             control.waitMicros(2);
@@ -122,7 +125,7 @@ namespace powerfunctions {
     
     
     
-    let FACTOR = 1
+    
     function ledOff(d: number) {
           control.waitMicros(d * FACTOR);
     }
