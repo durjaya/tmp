@@ -16,7 +16,12 @@ namespace powerfunctions {
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
+<<<<<<< HEAD
     //% block="1set "  
+=======
+    //% block="11set | motor %motor | to %speed"
+    //% speed.min=-7 speed.max=7
+>>>>>>> parent of be6fbec... Update main.ts
     //% weight=60
     export function setSpeed() {
         let x = 1
