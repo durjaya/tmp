@@ -117,8 +117,7 @@ namespace powerfunctions {
     //% block="11set"
     //% weight=60
     export function setSpeed() {
-        speed = Math.max(-7, Math.min(7, speed))
-        sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
+        let a = 1
     }
 
     namespace message {
