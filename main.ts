@@ -192,13 +192,78 @@ namespace powerfunctions {
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
-    //% block="22set | motor %motor | to %speed"
+    //% block="33set | motor %motor | to %speed"
     //% speed.min=-7 speed.max=7
     //% weight=60
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
     export function setSpeed(motor: PowerFunctionsMotor, speed: number) {
-        speed = Math.max(-7, Math.min(7, speed))
-        sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
+        stop()
+    }
+    function ledOn(d: number) {
+        let r = d * FACTOR;
+        while (r > 26) {
+            pins.digitalWritePin(DigitalPin.P1, 1)
+            control.waitMicros(2);
+            pins.digitalWritePin(DigitalPin.P1, 0)
+            r = r - 26;
+        }
+    }
+
+    function ledOff(d: number) {
+        control.waitMicros(d * FACTOR);
+    }
+    function stop(){
+        let factorx = 1
+        //1
+        ledOn(6000 * factorx);
+    
+        //2
+        ledOff(600 * factorx);
+    
+        //3
+        ledOn(600 * factorx);
+    
+        //4
+        ledOff(1500 * factorx);
+    
+        //5
+        ledOn(1500 * factorx);
+    
+        //6
+        ledOff(600 * factorx);
+    
+        //7
+        ledOn(1500 * factorx);
+    
+        //8
+        ledOff(600 * factorx);
+    
+        //9
+        ledOn(1500 * factorx);
+    
+        //10
+        ledOff(600 * factorx);
+    
+        //11
+        ledOn(600 * factorx);
+    
+        //12
+        ledOff(1500 * factorx);
+    
+        //13
+        ledOn(1500 * factorx);
+    
+        //14
+        ledOff(600 * factorx);
+    
+        //15
+        ledOn(1500 * factorx);
+    
+        //16
+        ledOff(600 * factorx);
+    
+        //17
+        ledOn(1500 * factorx);
     }
 
     namespace message {
