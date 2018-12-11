@@ -192,7 +192,7 @@ namespace powerfunctions {
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
-    //% block="11set | motor %motor | to %speed"
+    //% block="22set | motor %motor | to %speed"
     //% speed.min=-7 speed.max=7
     //% weight=60
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
