@@ -22,8 +22,6 @@ namespace powerfunctions {
     }
 
   
-}
-
 
     /**
      * Set speed of a motor.
