@@ -110,7 +110,9 @@ namespace powerfunctions {
     }
 
     function test(){
-        control.waitMicros(d * FACTOR);
+        pins.digitalWritePin(DigitalPin.P1, 1)
+        control.waitMicros(2);
+        pins.digitalWritePin(DigitalPin.P1, 0)
     }
 
 
