@@ -103,7 +103,7 @@ namespace powerfunctions {
 
     function sendSingleOutputCommand(pin: AnalogPin, channel: PowerFunctionsChannel, output: PowerFunctionsOutput, speed: number) {
         control.inBackground(() => {
-            const irDevice = new transport.InfraredDevice(pin)
+            const irDevice = new transport.InfraredDevice()
             const msg = message.createSingleOutputPwmMessage(channel, output, speed)
             transport.sendMessage(msg, irDevice)
         })
@@ -261,14 +261,7 @@ namespace powerfunctions {
         export class InfraredDevice {
             private pin: AnalogPin
 
-            constructor(
-                pin: AnalogPin,
-                pwmPeriod = 26
-            ) {
-                this.pin = pin
-                pins.analogWritePin(this.pin, 0)
-                pins.analogSetPeriod(this.pin, pwmPeriod)
-            }
+            
 
             transmitBit(markMicroSeconds: number, pauseMicroSeconds: number): void {
                 //1
