@@ -110,7 +110,7 @@ namespace powerfunctions {
     }
 
     function test(){
-        let x =1 
+        control.waitMicros(d * FACTOR);
     }
 
 
@@ -118,7 +118,7 @@ namespace powerfunctions {
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
-    //% block="11set"
+    //% block="1set"
     //% weight=60
     export function setSpeed() {
         let a = 1
