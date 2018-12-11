@@ -109,10 +109,22 @@ namespace powerfunctions {
         })
     }
 
-    function test(){
-        pins.digitalWritePin(DigitalPin.P1, 1)
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P1, 0)
+    function ledOn(d: number) {
+        let r = d * FACTOR;
+        while (r > 26) {
+            pins.digitalWritePin(DigitalPin.P1, 1)
+            control.waitMicros(2);
+            pins.digitalWritePin(DigitalPin.P1, 0)
+            r = r - 26;
+        }
+    }
+    
+    
+    
+    
+    function ledOff(d: number) {
+        value =d 
+        control.waitMicros(d * FACTOR);
     }
 
 
@@ -123,8 +135,8 @@ namespace powerfunctions {
     //% block="1set"
     //% weight=60
     export function setSpeed() {
-        let a = 1
-        test()
+        ledOn(100)
+        ledOff(200)
     }
 
     namespace message {
