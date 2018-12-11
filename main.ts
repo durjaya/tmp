@@ -109,6 +109,10 @@ namespace powerfunctions {
         })
     }
 
+    function test(){
+        let x =1 
+    }
+
 
     /**
      * Set speed of a motor.
@@ -118,6 +122,7 @@ namespace powerfunctions {
     //% weight=60
     export function setSpeed() {
         let a = 1
+        test()
     }
 
     namespace message {
