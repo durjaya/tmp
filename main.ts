@@ -132,11 +132,10 @@ namespace powerfunctions {
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
-    //% block="1set"
+    //% block="2set"
     //% weight=60
     export function setSpeed() {
-        ledOn(100)
-        ledOff(200)
+        let x = 1
     }
 
     namespace message {
