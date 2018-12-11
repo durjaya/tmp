@@ -109,94 +109,14 @@ namespace powerfunctions {
         })
     }
 
-    /**
-     * Configures the infrared LED pin. A 940 nm emitting diode is required.
-     */
-    //% blockId=pf_use_ir_led_pin
-    //% block="use IR LED on pin %pin"
-    //% weight=30
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4 pin.fieldOptions.tooltips="false"
-    //% advanced=true
-    export function useIrLedPin(pin: AnalogPin) {
-        irLed = pin
-    }
-
-    /**
-     * Configures a motor direction.
-     */
-    //% blockId=pf_set_motor_direction
-    //% block="set direction | of motor %motor | to %direction"
-    //% weight=20
-    //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
-    //% advanced=true
-    export function setMotorDirection(motor: PowerFunctionsMotor, direction: PowerFunctionsDirection) {
-        motorDirections[motor] = direction
-    }
-
-    /**
-     * Adjust timing configuration to reach the required IR precision.
-     * Due to the overhead of function calls the sleep intervals during transmission of IR commands need to be shortened.
-     * Timing depends on both the device and the MakeCode version.
-     * Recommended default values are -65 micro seconds for the IR mark and -150 micro seconds for the pause.
-     */
-    //% blockId=pf_adjust_ir_timing
-    //% block="adjust timing | of IR mark %markMicroSeconds | and pause %pauseMicroSeconds"
-    //% weight=10
-    //% markMicroSeconds.min=-157 markMicroSeconds.max=0
-    //% pauseMicroSeconds.min=-263 pauseMicroSeconds.max=0
-    //% advanced=true
-    export function adjustIrTiming(
-        markMicroSeconds: number = BoardConfig.MarkTimingCorrectionMicroSeconds,
-        pauseMicroSeconds: number = BoardConfig.PauseTimingCorrectionMicroSeconds)
-    {
-        markTimingCorrectionMicroSeconds = markMicroSeconds;
-        pauseTimingCorrectionMicroSeconds = pauseMicroSeconds;
-    }
-
-    /**
-     * Move a motor forward.
-     */
-    //% blockId=pf_move_forward
-    //% block="move forward | with motor %motor"
-    //% weight=100
-    //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
-    export function moveForward(motor: PowerFunctionsMotor) {
-        setSpeed(motor, 3)
-    }
-
-    /**
-     * Move a motor backward.
-     */
-    //% blockId=pf_move_backward
-    //% block="move backward | with motor %motor"
-    //% weight=90
-    //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
-    export function moveBackward(motor: PowerFunctionsMotor) {
-        setSpeed(motor, -3)
-    }
-
-    /**
-     * Brake then float.
-     * The motor's power is quickly reversed and thus the motor will stop abruptly.
-     */
-    //% blockId=powerfunctions_brake
-    //% block="brake| motor %motor"
-    //% weight=80
-    //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
-    export function brake(motor: PowerFunctionsMotor) {
-        setSpeed(motor, 0)
-    }
-
 
     /**
      * Set speed of a motor.
      */
     //% blockId=powerfunctions_set_speed
-    //% block="11set | motor %motor | to %speed"
-    //% speed.min=-7 speed.max=7
+    //% block="11set"
     //% weight=60
-    //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=4 motor.fieldOptions.tooltips="false"
-    export function setSpeed(motor: PowerFunctionsMotor, speed: number) {
+    export function setSpeed() {
         speed = Math.max(-7, Math.min(7, speed))
         sendSingleOutputCommand(irLed, getChannel(motor), getOutput(motor), speed * motorDirections[motor])
     }
