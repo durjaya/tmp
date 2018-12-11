@@ -70,6 +70,8 @@ enum PowerFunctionsCommand {
 //% weight=99 color=#0fbc11 icon="\uf0e4" block="Power Functions"
 namespace powerfunctions {
 
+    let FACTOR = 1
+
     let motorDirections = [
         PowerFunctionsDirection.Forward,
         PowerFunctionsDirection.Forward,
