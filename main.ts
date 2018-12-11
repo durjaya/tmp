@@ -72,4 +72,17 @@ namespace powerfunctions {
 
         
     }
+<<<<<<< HEAD
+=======
+
+
+    export function runTests() {
+
+        {
+            let a = 1
+        }
+
+        
+    }
+>>>>>>> parent of 55ada53... Update main.ts
 }
