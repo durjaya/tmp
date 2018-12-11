@@ -85,6 +85,9 @@ namespace powerfunctions {
         
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 55ada53... Update main.ts
+=======
 >>>>>>> parent of 55ada53... Update main.ts
 =======
 >>>>>>> parent of 55ada53... Update main.ts

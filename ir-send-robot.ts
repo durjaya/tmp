@@ -1,39 +1,18 @@
 // slow down factor for demo, at about 100 or 200 times slower
-let FACTOR = 1000
+let FACTOR = 1
 let value  = 0
-
-//function ledOn(d: number) {
-//    let r = d * FACTOR;
-//    while (r > 26) {
-//        pins.digitalWritePin(DigitalPin.P1, 1)
-//        control.waitMicros(2);
-//        pins.digitalWritePin(DigitalPin.P1, 0)
-//        r = r - 26;
-//    }
-//}
 
 function ledOn(d: number) {
     let r = d * FACTOR;
-    value = r
     while (r > 26) {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
+        pins.digitalWritePin(DigitalPin.P1, 1)
         control.waitMicros(2);
-        basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+        pins.digitalWritePin(DigitalPin.P1, 0)
         r = r - 26;
     }
 }
+
+
 
 
 function ledOff(d: number) {
@@ -422,7 +401,7 @@ function energeTransform(){
     ledOn(1500);
 }
 
-function music(){
+function musicradio(){
     ledOn(5950);
     ledOff(600);
     ledOn(1500);
@@ -447,11 +426,13 @@ function music(){
 // Button A sends code
 input.onButtonPressed(Button.A, () => {
     stop();
-
 })
 
-
+// Button A sends code
+input.onButtonPressed(Button.A, () => {
+    musicradio();
+})
 
 basic.forever(function () {
-    serial.writeValue("x", r)
+    serial.writeValue("x", value)
 })
