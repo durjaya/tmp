@@ -7,18 +7,7 @@
 
 /* Board specific configuration */
 //% weight=99 color=#0fbc11 icon="\uf0e4" block="Power Functions"
-function ledOn(d: number) {
-    let r = d * FACTOR;
-    while (r > 26) {
-        
-        r = r - 26;
-    }
-}
 
-
-function ledOff(d: number) {
-    value =d 
-}
 
 namespace powerfunctions {
 
@@ -53,6 +42,19 @@ namespace powerfunctions {
 
         export function sendMessage(message: number, device: InfraredDevice): void {
             let i = 1
+        }
+
+        function ledOn(d: number) {
+            let r = d * FACTOR;
+            while (r > 26) {
+                
+                r = r - 26;
+            }
+        }
+        
+        
+        function ledOff(d: number) {
+            value =d 
         }
     }
 
