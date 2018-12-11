@@ -84,15 +84,6 @@ namespace powerfunctions {
     }
 
 
-    /**
-     * Set speed of a motor.
-     */
-    //% blockId=powerfunctions_set_speed1
-    //% block="3set"
-    //% weight=60
-    export function setSpeed() {
-        stop()
-    }
 
 
 
