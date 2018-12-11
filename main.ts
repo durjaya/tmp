@@ -125,8 +125,7 @@ namespace powerfunctions {
     
     
     function ledOff(d: number) {
-        value =d 
-        control.waitMicros(d * FACTOR);
+          control.waitMicros(d * FACTOR);
     }
 
 
